@@ -7,6 +7,9 @@ namespace CodingChallenge.FamilyTree
         public string GetBirthMonth(Person person, string descendantName)
         {
             string theBirthday = "";
+            if (person.Name == descendantName) {
+                return person.Name;
+            }
 
             foreach (Person peep in person.Descendants)
             {

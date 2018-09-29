@@ -51,6 +51,14 @@ namespace CodingChallenge.FamilyTree
             // represent the number of people at the current level on the given branch.
             foreach (Person man in person.Descendants)
             {
+
+                // I believe this will check of TheRealBirthday property will return out of all currently nested
+                // loops and each additional loop as the method progresses down the tree branches once TheRealBirthday
+                // is set.
+                if (TheRealBirthday != null)
+                {
+                    return;
+                }
                 if (man.Name == descendantName)
                 {
                     TheRealBirthday = man.Birthday.ToString("MMMM");
